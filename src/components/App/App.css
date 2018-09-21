@@ -1,0 +1,24 @@
+body{
+  --taxi-yellow: #bda449;
+  --taxi-black: black;
+}
+.bg-black{
+  background-color: black;
+  color: whitesmoke;
+}
+.btn-yellow{
+  background-color: var(--taxi-yellow);
+  color: var(--taxi-black);
+}
+.translucent{
+  opacity: 0.9;
+}
+.nav-link.active{
+  border-bottom: solid 2px whitesmoke !important;
+}
+.bg-img{
+  background-image: url(../../images/background-image.png);
+  object-fit: fill;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
