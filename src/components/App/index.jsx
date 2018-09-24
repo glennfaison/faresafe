@@ -23,8 +23,7 @@ class App extends React.Component {
     }
     return (
       <Router basename={this.props.routes.baseRoute} >
-        <div className="container-fluid text-light bg-img" id="page-container"
-          style={{"backgroundImage": "url(" + process.env.PUBLIC_URL + "/images/background-image.png)"}}>
+        <div className="container-fluid text-light bg-img" id="page-container">
           <section className="row sticky-top">
             <NavBar />
           </section>
