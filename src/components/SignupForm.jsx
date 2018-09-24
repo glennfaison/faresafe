@@ -3,33 +3,26 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
 import { signup } from '../store/actions';
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.hideThis = this.hideThis.bind(this);
-    this.state = {containerClassName: "collapse border border-light rounded p-4"};
+    this.submit = this.submit.bind(this);
   }
-  // constructor(props) {
-  //   super(props);
-  //   this.signupClicked = this.signupClicked.bind(this);
-  // }
-  // signupClicked() {
-  //   let formInfo = {};
-  //   for (let refName in this.refs) {
-  //     formInfo[refName] = ReactDOM.findDOMNode(this.refs[refName]).nodeValue;
-  //   }
-  //   this.props.dispatch(signup(formInfo));
-  // }
-  hideThis() {
-    let container = ReactDOM.findDOMNode(this.refs["signup-form"]);
-    let lst = container.classList.value.split(" ");
+  submit() {
+    let formInfo = {};
+    for (let refName in this.refs) {
+      formInfo[refName] = ReactDOM.findDOMNode(this.refs[refName]).nodeValue;
+    }
+    this.props.dispatch(signup(formInfo));
   }
   render() {
+    let containerClassName = "mx-auto border border-light rounded p-4";
+    if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <div className={this.state.containerClassName} id="signup-form" ref="signup-form">
+      <div className={containerClassName} id="signup-form" ref="signup-form">
+        <h2 className="text-center">SIGN UP</h2>
         <div className="form-group">
           <label htmlFor="firstName" className="col-sm col-form-label col-form-label-sm">First Name</label>
           <div className="col-sm">
@@ -58,17 +51,17 @@ class SignupForm extends React.Component {
           <div className="col">
             <button type="submit"
               className="btn btn-sm btn-block btn-yellow"
-              onClick={this.signupClicked}>Signup</button>
+              onClick={this.submit}>Signup</button>
           </div>
         </div>
         <hr className="mx-3 mt-3" />
         <small className="text-center align-content-center">
           <div>Already have an account?</div>
           <div>
-            <a href={"#login-form"} data-parent={this.props.dataParent} data-toggle="collapse" data-target="#login-form"
-              onClick={this.hideThis}>
+            <Link to="#" className="btn btn-sm btn-link"
+              onClick={() => { this.props.hideThis("signup") }}>
               login
-            </a>
+            </Link>
           </div>
         </small>
       </div>

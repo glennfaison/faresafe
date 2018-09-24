@@ -1,12 +1,23 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import { connect } from 'react-redux';
 
 class PassengerInfoForm extends React.Component {
+  submit() {
+    let formInfo = {};
+    for (let refName in this.refs) {
+      let node = ReactDOM.findDOMNode(this.refs[refName]);
+      formInfo[refName] = node.nodeValue;
+    }
+    // this.props.dispatch(login(formInfo));
+  }
   render() {
     return (
       <form className="col-12 py-3 px-4 border border-light rounded mx-auto">
         <div className="row">
-          <img src="../images/logo_1x.png" className="img-fluid mx-auto" alt="Fare Safe" />
+          <img src={process.env.PUBLIC_URL + "/images/logo_1x.png"}
+            className="img-fluid mx-auto" alt="Fare Safe" />
         </div>
         <div className="form-group row">
           <label htmlFor="name" className="col-sm-12 col-form-label">Name</label>
@@ -49,7 +60,8 @@ class PassengerInfoForm extends React.Component {
         </div>
         <div className="form-group row">
           <div className="col-12">
-            <button type="submit" className="btn btn-block btn-yellow">Submit</button>
+            <button type="submit" className="btn btn-block btn-yellow"
+              onClick={this.submit}>Submit</button>
           </div>
         </div>
       </form>

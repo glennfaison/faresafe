@@ -9,21 +9,21 @@ let ContactUsView = (props) => {
         <h1 className="font-weight-bold">CONTACT US</h1>
       </div>
       <div className="d-flex w-100 align-content-between flex-column flex-wrap flex-md-row">
-        <InfoBox icon="fa-map-marker-alt" bgColor="bg-success" line1="ADDRESS"
-          line2="British Avenue" line3="lorem ipsum dolor sit amet" />
-        <InfoBox icon="fa-phone" bgColor="bg-warning" line1="PHONES"
-          line2="British Avenue" line3="lorem ipsum dolor sit amet" />
-        <InfoBox icon="fa-envelope" bgColor="bg-danger" line1="CONTACTS"
-          line2="British Avenue" line3="lorem ipsum dolor sit amet" />
-        <InfoBox icon="fa-clock" bgColor="bg-primary" line1="WORKING HOURS"
-          line2="British Avenue" line3="lorem ipsum dolor sit amet" />
+        <InfoBox icon="fa-map-marker-alt" bgColor="bg-success" lines={["ADDRESS",
+          "Fare Safe Ltd", "The Old School, 188 Liscard Road, Liscard, Wallasey, CH44 5TN"]} />
+        <InfoBox icon="fa-phone" bgColor="bg-warning" lines={["PHONES",
+          "Phone: 0151 272 6708", "Head office: 02070846707"]} />
+        <InfoBox icon="fa-envelope" bgColor="bg-danger" lines={["CONTACTS",
+          "info@faresafe.co.uk", "www.faresafe.co.uk"]} />
+        <InfoBox icon="fa-clock" bgColor="bg-primary" lines={["WORKING HOURS",
+          "Monday-Friday: 9:00 – 18:00", "Saturday: 11:00 – 17:00",
+          "Sunday: Closed"]} />
       </div>
       <div className="col-12">
         <div className="row no-gutters">
-          <div className="col-lg-8 order-last p-3 order-lg-first bg-danger ml-3 ml-md-0">
-            lorem ipsum dolor sit amet
+          <div className="col-12 col-md-12 col-lg-6 order-last order-lg-first p-3 ml-3 ml-md-0">
           </div>
-          <div className="col-md-8 offset-md-2 col-lg-4 offset-lg-0 ml-3 ml-md-0">
+          <div className="col-12 col-lg-6 offset-lg-0 ml-3 ml-md-0">
             <div className={"d-block border border-light rounded p-4 mx-auto"} id="contact-us-form">
               <div className="form-group">
                 <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>

@@ -8,10 +8,7 @@ let AppFooter = (props) => {
           <div className="col">
             <div className="row">
               <div className="col-auto px-0">
-                2018 © Copyrights Faresafe.co.uk &nbsp;| &nbsp;
-              </div>
-              <div className="col-auto px-0">
-                Website Designed By Merseyprint.co.uk
+                2018 © Copyrights Faresafe.co.uk
               </div>
             </div>
           </div>

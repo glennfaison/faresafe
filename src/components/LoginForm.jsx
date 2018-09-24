@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { login } from '../store/actions';
@@ -8,27 +8,23 @@ import { login } from '../store/actions';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.hideThis = this.hideThis.bind(this);
-    this.state = {containerClassName: "collapse show border border-light rounded p-4"};
-    this.loginClicked = this.loginClicked.bind(this);
+    this.submit = this.submit.bind(this);
   }
-  loginClicked() {
+  submit() {
     let formInfo = {};
     for (let refName in this.refs) {
       let node = ReactDOM.findDOMNode(this.refs[refName]);
       formInfo[refName] = node.nodeValue;
     }
-    this.props.history.replace(this.props.routes.formSubmission);
-    // this.props.dispatch(login(formInfo)); console.log(formInfo)
-  }
-  hideThis() {
-    let container = ReactDOM.findDOMNode(this.refs["login-form"]);
-    let lst = container.classList.value.split(" ");
+    this.props.dispatch(login(formInfo));
   }
   render() {
+    let containerClassName = "mx-auto border border-light rounded p-4";
+    if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <div className={this.state.containerClassName} id="login-form" ref="login-form">
+      <div className={containerClassName} id="login-form" ref="login-form">
         <div className="form-group">
+          <h2 className="text-center">LOGIN</h2>
           <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>
           <div className="col-sm">
             <input type="email" className="form-control form-control-sm" name="email" ref="email" placeholder="email@example.org" />
@@ -44,17 +40,17 @@ class LoginForm extends React.Component {
           <div className="col">
             <button type="submit"
               className="btn btn-sm btn-block btn-yellow"
-              onClick={this.loginClicked}>Login</button>
+              onClick={this.submit}>Login</button>
           </div>
         </div>
         <hr className="mx-3 mt-3" />
         <small className="text-center align-content-center">
           <div>Don't have an account?</div>
           <div>
-            <a href={"#signup-form"} data-parent={this.props.dataParent} data-toggle="collapse" data-target="#signup-form"
-              aria-expanded="false" aria-controls="signup-form" onClick={this.hideThis}>
+            <Link to="#" className="btn btn-sm btn-link"
+              onClick={() => { this.props.hideThis("login"); }}>
               signup
-            </a>
+            </Link>
           </div>
         </small>
       </div>
@@ -73,4 +69,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(LoginForm));
+)(LoginForm);

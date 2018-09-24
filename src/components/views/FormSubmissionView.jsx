@@ -5,7 +5,7 @@ import PassengerInfoForm from '../PassengerInfoForm';
 
 let FormSubmissionView = (props) => {
   return (
-    <section className="row no-gutters pl-3">
+    <section className="row no-gutters">
       <PassengerInfoForm />
     </section>
   );

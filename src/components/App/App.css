@@ -10,6 +10,9 @@ body{
   background-color: var(--taxi-yellow);
   color: var(--taxi-black);
 }
+.btn:hover{
+  cursor: pointer;
+}
 .translucent{
   opacity: 0.9;
 }
