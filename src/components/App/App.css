@@ -21,7 +21,7 @@ body{
 }
 .bg-img{
   background-image: url(../../images/background-image.png);
-  object-fit: fill;
+  object-fit: cover;
   background-repeat: repeat;
   background-attachment: fixed;
 }
