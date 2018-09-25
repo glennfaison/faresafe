@@ -17,17 +17,6 @@ let AboutUsView = (props) => {
           </div>
         </div>
         <div className="col-md-4 offset-md-1">
-          <h1>WE ARE FARESAFE</h1>
-          <p className="h4 font-weight-light">
-            At Fare Safe we believe we can achieve a greater work-life
-            balance for our members by taking on those pressures that Taxi
-            and Private Hire Drivers are faced with each day and relieving
-            you of all the hassle.
-          </p>
-          <a href="#blank">Read More…</a>.
-          <p className="text-center">
-            <img src={process.env.PUBLIC_URL + "/images/logo_1x.png"} className="img-fluid mx-auto" alt="Fare Safe" />
-          </p>
         </div>
       </div>
     </React.Fragment>
