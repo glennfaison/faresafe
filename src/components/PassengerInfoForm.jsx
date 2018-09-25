@@ -8,13 +8,14 @@ class PassengerInfoForm extends React.Component {
     let formInfo = {};
     for (let refName in this.refs) {
       let node = ReactDOM.findDOMNode(this.refs[refName]);
-      formInfo[refName] = node.nodeValue;
+      formInfo[refName] = node.value;
     }
     // this.props.dispatch(login(formInfo));
   }
   render() {
     return (
-      <form className="col-12 py-3 px-4 border border-light rounded mx-auto">
+      <form className="col-12 py-3 px-4 border border-light rounded mx-auto"
+        onSubmit={e => e.preventDefault()}>
         <div className="row">
           <img src={process.env.PUBLIC_URL + "/images/logo_1x.png"}
             className="img-fluid mx-auto" alt="Fare Safe" />
@@ -48,14 +49,14 @@ class PassengerInfoForm extends React.Component {
           <label htmlFor="passengerId" className="col-sm-12 col-form-label">Passenger
           ID</label>
           <div className="col-sm-12">
-            <input type="file" name="passengerId" className="form-control"
+            <input type="file" name="passengerId" ref="passengerId" className="form-control"
               placeholder="Passenger ID" />
           </div>
         </div>
         <div className="form-group row">
           <label htmlFor="proof" className="col-sm-12 col-form-label">Proof</label>
           <div className="col-sm-12">
-            <input type="file" name="proof" className="form-control" placeholder="Proof" />
+            <input type="file" name="proof" ref="proof" className="form-control" placeholder="Proof" />
           </div>
         </div>
         <div className="form-group row">

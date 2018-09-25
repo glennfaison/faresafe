@@ -13,15 +13,15 @@ class SignupForm extends React.Component {
   submit() {
     let formInfo = {};
     for (let refName in this.refs) {
-      formInfo[refName] = ReactDOM.findDOMNode(this.refs[refName]).nodeValue;
-    }
+      formInfo[refName] = ReactDOM.findDOMNode(this.refs[refName]).value;
+    }console.log(formInfo)
     this.props.dispatch(signup(formInfo));
   }
   render() {
     let containerClassName = "mx-auto border border-light rounded p-4";
     if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <div className={containerClassName} id="signup-form" ref="signup-form">
+      <form className={containerClassName} onSubmit={e => e.preventDefault()}>
         <h2 className="text-center">SIGN UP</h2>
         <div className="form-group">
           <label htmlFor="firstName" className="col-sm col-form-label col-form-label-sm">First Name</label>
@@ -64,7 +64,7 @@ class SignupForm extends React.Component {
             </Link>
           </div>
         </small>
-      </div>
+      </form>
     );
   }
 }

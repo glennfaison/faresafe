@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
     let formInfo = {};
     for (let refName in this.refs) {
       let node = ReactDOM.findDOMNode(this.refs[refName]);
-      formInfo[refName] = node.nodeValue;
+      formInfo[refName] = node.value;
     }
     this.props.dispatch(login(formInfo));
   }
@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
     let containerClassName = "mx-auto border border-light rounded p-4";
     if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <div className={containerClassName} id="login-form" ref="login-form">
+      <form className={containerClassName} onSubmit={e => e.preventDefault()}>
         <div className="form-group">
           <h2 className="text-center">LOGIN</h2>
           <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>
@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
             </Link>
           </div>
         </small>
-      </div>
+      </form>
     );
   }
 }

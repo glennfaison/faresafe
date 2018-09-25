@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import InfoBox from '../InfoBox';
+import ContactForm from '../ContactForm';
 
 let ContactUsView = (props) => {
   return (
@@ -24,40 +25,7 @@ let ContactUsView = (props) => {
           <div className="col-12 col-md-12 col-lg-6 order-last order-lg-first p-3 ml-3 ml-md-0">
           </div>
           <div className="col-12 col-lg-6 offset-lg-0 ml-3 ml-md-0">
-            <div className={"d-block border border-light rounded p-4 mx-auto"} id="contact-us-form">
-              <div className="form-group">
-                <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>
-                <div className="col-sm">
-                  <input type="email" className="form-control form-control-sm" name="email" placeholder="email@example.org" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="name" className="col-sm col-form-label col-form-label-sm">Name</label>
-                <div className="col-sm">
-                  <input type="text" className="form-control form-control-sm" name="name" placeholder="John Doe" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="subject" className="col-sm col-form-label col-form-label-sm">Subject</label>
-                <div className="col-sm">
-                  <input type="text" className="form-control form-control-sm" name="subject" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="message" className="col-sm col-form-label col-form-label-sm">Your Message</label>
-                <div className="col-sm">
-                  <textarea className="form-control form-control-sm" rows="7" name="message"></textarea>
-                </div>
-              </div>
-              <div className="form-group">
-                <div className="col">
-                  <button type="submit"
-                    className="btn btn-sm btn-block btn-yellow">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </div>

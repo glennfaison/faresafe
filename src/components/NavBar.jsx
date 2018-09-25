@@ -1,8 +1,11 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 let NavBar = (props) => {
   // let noSlashPath = props.history.location.pathname.substring(1);
+  let visibility = (!!props.thisUser)? "": " d-none";
+  let username = (!!props.thisUser)? props.thisUser.firstName: "";
   return (
     <nav className="navbar navbar-expand-md col-12 navbar-dark font-weight-bold translucent bg-img" >
       <div className="container">
@@ -22,31 +25,16 @@ let NavBar = (props) => {
               <a className="nav-link" href="#about-us">ABOUT US</a>
             </li>
             <li className="nav-item px-2">
-              <a className="nav-link" href="#contact-us">CONTACT US</a>
+              <Link className="nav-link" to={props.routes.contactUs}>CONTACT US</Link>
             </li>
-            <li className="nav-item px-2 dropdown">
-              <a className="nav-link dropdown-toggle" href="#blank" id="dropdownId"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+            <li className={"nav-item px-2 dropdown" + visibility}>
+              <a className="nav-link dropdown-toggle text-uppercase" href="#blank" id="dropdownId"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{username}</a>
               <div className="dropdown-menu dropdown-menu-right text-md-center text-uppercase bg-img translucent" aria-labelledby="dropdownId">
-                <a className="dropdown-item text-light" href="#blank">Action 2</a>
-                <a className="dropdown-item text-light" href="#blank">Action 1</a>
-                <a className="dropdown-item text-light" href="#blank">Action 2</a>
-                <a className="dropdown-item text-light" href="#blank">Action 1</a>
-                <a className="dropdown-item text-light" href="#blank">Action 1</a>
-                <a className="dropdown-item text-light" href="#blank">Action 2</a>
-              </div>
-            </li>
-            <li className="nav-item px-2 dropdown">
-              <a className="nav-link dropdown-toggle" href="#blank" id="dropdownId"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i className="fas fa-search fa-lg fa-fw"></i>
-              </a>
-              <div className="dropdown-menu dropdown-menu-right bg-dark py-0"
-                aria-labelledby="dropdownId">
-                <form className="form-inline col-12 px-0">
-                  <input className="form-control bg-secondary border-0 col-12"
-                    type="search" placeholder="Search" />
-                </form>
+                <a className="dropdown-item text-light" href="#blank">Logout</a>
+                <Link className="dropdown-item text-light" to={props.routes.submitForm}>
+                  Submit Form
+                </Link>
               </div>
             </li>
           </ul>
@@ -56,4 +44,14 @@ let NavBar = (props) => {
   );
 };
 
-export default withRouter(NavBar);
+const mapStateToProps = (state, ownProps) => {
+  return {
+    "routes": state.routes,
+    "thisUser": state.thisUser
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(withRouter(NavBar));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 
 import NavBar from '../NavBar';
 import AppFooter from '../AppFooter';
@@ -22,7 +22,7 @@ class App extends React.Component {
       this.props.history.replace(this.props.routes.login);
     }
     return (
-      <Router basename={this.props.routes.baseRoute} >
+      <BrowserRouter basename={this.props.routes.baseRoute} >
         <div className="container-fluid text-light bg-img" id="page-container">
           <section className="row sticky-top">
             <NavBar />
@@ -57,7 +57,7 @@ class App extends React.Component {
           </section>
 
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

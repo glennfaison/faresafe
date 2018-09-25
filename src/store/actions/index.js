@@ -7,20 +7,14 @@ export const login = ({ email, password }) => {
 export const signup = ({ firstName, lastNames, email, password }) => {
   return { type: actionTypes.signup, firstName, lastNames, email, password };
 };
+export const submitPassengerInfo = ({ name, address, dob, passengerID, proof }) => {
+  return { type: actionTypes.submitPassengerInfo, name, address, dob, passengerID, proof };
+};
+export const contactUs = ({ name, email, subject, message }) => {
+  return { type: actionTypes.contactUs, name, email, subject, message };
+};
 export const postNotification = ({ messageType, message }) => {
-  return { type: actionTypes.postNotificatoin, messageType: messageType, message: message };
-};
-export const addQuoteFormSection = () => {
-  return { type: actionTypes.addQuoteFormSection };
-};
-export const removeQuoteFormSection = (title) => {
-  return { type: actionTypes.removeQuoteFormSection, title: title };
-};
-export const addQuoteSectionItem = (title) => {
-  return { type: actionTypes.addQuoteSectionItem, title: title };
-};
-export const removeQuoteSectionItem = ({ title, id }) => {
-  return { type: actionTypes.removeQuoteSectionItem, title: title, id: id };
+  return { type: actionTypes.postNotification, messageType: messageType, message: message };
 };
 export const navBarSearch = (searchString) => {
   return { type: actionTypes.navBarSearch, searchString: searchString };
