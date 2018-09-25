@@ -1,6 +1,14 @@
 body{
+  --taxi-yellow: #bda449;
+  --taxi-black: black;
   background-image: url(../images/background-image.png);
   object-fit: cover;
   background-repeat: repeat;
   background-attachment: fixed;
+}
+a,
+a:hover,
+a:visited,
+a:active{
+  color: var(--taxi-yellow);
 }
