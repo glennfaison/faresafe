@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 let NavBar = (props) => {
   // let noSlashPath = props.history.location.pathname.substring(1);
-  let visibility = (!!props.thisUser)? "": " d-none";
+  let logoutVisibility = (!!props.thisUser)? "": " d-none";
+  let loginVisibility = (!!props.thisUser)? " d-none": "";
   let username = (!!props.thisUser)? props.thisUser.firstName: "";
   return (
     <nav className="navbar navbar-expand-md col-12 navbar-dark font-weight-bold translucent bg-img" >
@@ -22,15 +23,21 @@ let NavBar = (props) => {
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item px-2" >
-              <a className="nav-link" href="#about-us">ABOUT US</a>
+              <a className="nav-link" href="#about-us">Submit Fare Recovery</a>
+            </li>
+            <li className="nav-item px-2" >
+              <a className="nav-link" href="#about-us">About Us</a>
             </li>
             <li className="nav-item px-2">
-              <Link className="nav-link" to={props.routes.contactUs}>CONTACT US</Link>
+              <Link className="nav-link" to={props.routes.contactUs}>Contact Us</Link>
             </li>
-            <li className={"nav-item px-2 dropdown" + visibility}>
+            <li className={"nav-item px-2" + loginVisibility}>
+              <Link className="nav-link" to={props.routes.contactUs}>Register / Login</Link>
+            </li>
+            <li className={"nav-item px-2 dropdown" + logoutVisibility}>
               <a className="nav-link dropdown-toggle text-uppercase" href="#blank" id="dropdownId"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{username}</a>
-              <div className="dropdown-menu dropdown-menu-right text-md-center text-uppercase bg-img translucent" aria-labelledby="dropdownId">
+              <div className="dropdown-menu dropdown-menu-right text-md-center text-capitalize bg-img translucent" aria-labelledby="dropdownId">
                 <a className="dropdown-item text-light" href="#blank">Logout</a>
                 <Link className="dropdown-item text-light" to={props.routes.submitForm}>
                   Submit Form
