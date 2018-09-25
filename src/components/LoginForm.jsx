@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
     let containerClassName = "mx-auto border border-light rounded p-4";
     if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <form className={containerClassName} onSubmit={e => e.preventDefault()}>
+      <form className={containerClassName} aonSubmit={e => e.preventDefault()}>
         <div className="form-group">
           <h2 className="text-center">LOGIN</h2>
           <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>
@@ -47,10 +47,9 @@ class LoginForm extends React.Component {
         <small className="text-center align-content-center">
           <div>Don't have an account?</div>
           <div>
-            <Link to="#" className="btn btn-sm btn-link"
-              onClick={() => { this.props.hideThis("login"); }}>
+            <a href="#blank" onClick={() => { this.props.hideThis("login"); }}>
               signup
-            </Link>
+            </a>
           </div>
         </small>
       </form>
