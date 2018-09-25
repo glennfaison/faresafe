@@ -48,7 +48,7 @@ const thisUser = (state = initialState, action) => {
     case actionTypes.logout:
       return logout(action.email, action.password);
     default:
-      return state;
+      return null;
   }
 };
 

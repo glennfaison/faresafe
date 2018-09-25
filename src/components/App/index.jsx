@@ -18,9 +18,9 @@ import AboutUsView from '../views/AboutUsView';
 
 class App extends React.Component {
   render() {
-    if (this.props.thisUser === null || this.props.thisUser === undefined) {
-      this.props.history.replace(this.props.routes.login);
-    }
+    // if (this.props.thisUser === null || this.props.thisUser === undefined) {
+    //   this.props.history.replace(this.props.routes.login);
+    // }
     return (
       <BrowserRouter basename={this.props.routes.baseRoute} >
         <div className="container-fluid text-light bg-img" id="page-container">
@@ -35,6 +35,7 @@ class App extends React.Component {
                 <ContactUsView exact path={this.props.routes.contactUs} />
                 <FormSubmissionView exact path={this.props.routes.submitForm} />
                 <SubmissionSuccessView exact path={this.props.routes.submissionSuccess} />
+                <AboutUsView exact path={this.props.routes.aboutUs} />
                 {/* <ErrorView exact={true} path={this.props.routes.error} /> */}
                 <RedirectionView exact={false}
                   path={this.props.routes.root}

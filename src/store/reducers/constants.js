@@ -4,6 +4,7 @@ const routeState = {
   "submitForm": "/submit-form",
   "submissionSuccess": "/submit-success",
   "contactUs": "/contact-us",
+  "aboutUs": "/about-us",
   "root": "/",
   "profile": "/profile",
   "error": "/error",
