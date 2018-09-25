@@ -42,10 +42,6 @@ class App extends React.Component {
                   redirectPath={this.props.routes.welcome} />
               </Switch>
             </section>
-
-            <section className="row mb-3 d-none d-lg-block" id="about-us">
-              <AboutUsView />
-            </section>
           </div>
 
 

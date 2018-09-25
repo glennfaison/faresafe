@@ -9,6 +9,10 @@ body{
 a,
 a:hover,
 a:visited,
-a:active{
-  color: var(--taxi-yellow);
+a:active,
+.btn-link,
+.btn-link:hover,
+.btn-link:visited,
+.btn-link:active,{
+  color: var(--taxi-yellow) !important;
 }
