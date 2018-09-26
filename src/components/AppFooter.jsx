@@ -6,7 +6,7 @@ let AppFooter = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center small py-4">
-            Developed by <a href="http://www.yourbrandreach.net" target="_blank">Your Brand Reach</a> for Fare Safe LTD
+            Developed by <a href="http://www.yourbrandreach.net" target="_blank" rel="noopener noreferrer">Your Brand Reach</a> for Fare Safe LTD
           </div>
         </div>
       </div>
