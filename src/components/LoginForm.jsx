@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
     let containerClassName = "mx-auto border border-light rounded p-4";
     if (this.props.hidden) { containerClassName = "d-none"; }
     return (
-      <form className={containerClassName} aonSubmit={e => e.preventDefault()}>
+      <form className={containerClassName} onSubmit={e => e.preventDefault()}>
         <div className="form-group">
           <h2 className="text-center">LOGIN</h2>
           <label htmlFor="email" className="col-sm col-form-label col-form-label-sm">Email</label>
