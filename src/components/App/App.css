@@ -25,3 +25,9 @@ body{
   background-repeat: repeat;
   background-attachment: fixed;
 }
+a:not([class="nav-link"]),
+a:hover,
+a:active,
+a:visited{
+  color: var(--taxi-yellow) !important;
+}

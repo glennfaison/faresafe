@@ -58,9 +58,9 @@ class SignupForm extends React.Component {
         <small className="text-center align-content-center">
           <div>Already have an account?</div>
           <div>
-            <a href="#blank" onClick={() => { this.props.hideThis("signup") }}>
+            <Link to="#" onClick={() => { this.props.hideThis("signup") }}>
               login
-            </a>
+            </Link>
           </div>
         </small>
       </form>

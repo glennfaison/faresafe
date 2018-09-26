@@ -8,15 +8,15 @@ const initialState = {
   "password": "admin"
 };
 
-let signup = (user) => {
-  axios.post('http://localhost:8000/users/signup', user)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-};
+// let signup = (user) => {
+//   axios.post('http://localhost:8000/users/signup', user)
+//     .then(res => {
+//       console.log(res);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+// };
 let login = (email, password) => {
   let data = { email, password };
   axios.post('http://localhost:8000/users/login', data)

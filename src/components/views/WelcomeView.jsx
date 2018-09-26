@@ -11,7 +11,7 @@ const hideForm = (formName)=> {
 const WelcomeView = (props) => {
   return (
     <section className="row w-100">
-      <div className="col-12 col-lg-4 ml-3 ml-lg-0 order-lg-last">
+      <div className="col-12 col-lg-4 ml-3 ml-lg-0 pb-5 order-lg-last">
         <LoginForm hidden={(openFormName !== "login")} hideThis={hideForm}/>
         <SignupForm hidden={(openFormName !== "signup")} hideThis={hideForm}/>
       </div>

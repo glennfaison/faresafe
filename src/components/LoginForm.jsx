@@ -47,9 +47,9 @@ class LoginForm extends React.Component {
         <small className="text-center align-content-center">
           <div>Don't have an account?</div>
           <div>
-            <a href="#blank" onClick={() => { this.props.hideThis("login"); }}>
+            <Link to="#" onClick={() => { this.props.hideThis("login"); }}>
               signup
-            </a>
+            </Link>
           </div>
         </small>
       </form>

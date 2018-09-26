@@ -6,13 +6,3 @@ body{
   background-repeat: repeat;
   background-attachment: fixed;
 }
-a,
-a:hover,
-a:visited,
-a:active,
-.btn-link,
-.btn-link:hover,
-.btn-link:visited,
-.btn-link:active,{
-  color: var(--taxi-yellow) !important;
-}
