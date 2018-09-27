@@ -38,7 +38,6 @@ class App extends React.Component {
                 <AboutUsView exact path={this.props.routes.aboutUs} />
                 {/* <ErrorView exact={true} path={this.props.routes.error} /> */}
                 <RedirectionView exact={false}
-                  path={this.props.routes.root}
                   redirectPath={this.props.routes.welcome} />
               </Switch>
             </section>
