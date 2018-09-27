@@ -9,7 +9,7 @@ import PageTopAnchor from '../PageTopAnchor';
 // import ErrorView from '../views/ErrorView';
 import WelcomeView from '../views/WelcomeView';
 import ContactUsView from '../views/ContactUsView';
-// import RedirectionView from '../views/RedirectionView';
+import RedirectionView from '../views/RedirectionView';
 import FormSubmissionView from '../views/FormSubmissionView';
 import SubmissionSuccessView from '../views/SubmissionSuccessView';
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     //   this.props.history.replace(this.props.routes.login);
     // }
     return (
-      <BrowserRouter basename={this.props.routes.baseRoute} >
+      <BrowserRouter >
         <div className="container-fluid text-light bg-img" id="page-container">
           <section className="row sticky-top">
             <NavBar />
@@ -36,14 +36,13 @@ class App extends React.Component {
                 <FormSubmissionView exact path={this.props.routes.submitForm} />
                 <SubmissionSuccessView exact path={this.props.routes.submissionSuccess} />
                 <AboutUsView exact path={this.props.routes.aboutUs} />
-                {/* <ErrorView exact={true} path={this.props.routes.error} />
+                {/* <ErrorView exact={true} path={this.props.routes.error} /> */}
                 <RedirectionView exact={false}
                   path={this.props.routes.root}
-                  redirectPath={this.props.routes.welcome} /> */}
+                  redirectPath={this.props.routes.welcome} />
               </Switch>
             </section>
           </div>
-
 
           <section className="row">
             <AppFooter />
