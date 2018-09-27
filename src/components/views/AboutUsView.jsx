@@ -10,7 +10,7 @@ let AboutUsView = (props) => {
       <div className="row no-gutters">
         <div className="col-md-6 order-md-first order-sm-last">
           <div className="py-3">
-            <video width="100%" height="100%" controls="controls"
+            <video className="col-12" width="100%" height="100%" controls="controls"
               src="http://www.faresafe.co.uk/IMG_1615.mp4"
               poster="http://www.faresafe.co.uk/wp-content/uploads/2018/03/dave.jpg"
               preload="none"></video>
