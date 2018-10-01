@@ -1,5 +1,5 @@
 import { actionTypes } from "./constants";
-import axios from 'axios';
+// import axios from 'axios';
 
 const initialState = {
   "firstName": "admin",
@@ -8,27 +8,27 @@ const initialState = {
   "password": "admin"
 };
 
-// let signup = (user) => {
-//   axios.post('http://localhost:8000/users/signup', user)
-//     .then(res => {
-//       console.log(res);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// };
+let signup = (user) => {
+  // axios.post('http://localhost:8000/users/signup', user)
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+  //   .catch(err => {
+  //     console.error(err);
+  //   });
+};
 let login = (email, password) => {
   let data = { email, password };
-  axios.post('http://localhost:8000/users/login', data)
-    .then(verifiedUserInfo => {
-      let { token } = verifiedUserInfo.data;
-      axios.post('http://localhost:8000/users/current', verifiedUserInfo, { headers: { 'Token': token } })
-        .then(user => {
-          return user;
-        })
-        .catch(err => console.error(err));
-    })
-    .catch(err => console.error(err));
+  // axios.post('http://localhost:8000/users/login', data)
+  //   .then(verifiedUserInfo => {
+  //     let { token } = verifiedUserInfo.data;
+  //     axios.post('http://localhost:8000/users/current', verifiedUserInfo, { headers: { 'Token': token } })
+  //       .then(user => {
+  //         return user;
+  //       })
+  //       .catch(err => console.error(err));
+  //   })
+  //   .catch(err => console.error(err));
   if (email === initialState.email) {
     if (password === initialState.password) {
       return initialState;
